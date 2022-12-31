@@ -1,7 +1,15 @@
 .dot {
     height: 50px;
     width: 50px;
-    background-color: #bbb;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.player {
+    height: 15px;
+    width: 15px;
+    background-color: grey;
     border-radius: 50%;
     display: inline-block;
   }
