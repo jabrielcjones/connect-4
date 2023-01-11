@@ -29,12 +29,19 @@ const clearHighlight = () => {
     })
 }
 
+const updateVictoryBanner = ({shouldShowPlayer1, shouldShowPlayer2}) => {
+    document.getElementById('player-1-wins').hidden = !shouldShowPlayer1;
+    document.getElementById('player-2-wins').hidden = !shouldShowPlayer2;
+}
+
 const clear = () => {
     const dots = document.getElementsByClassName('dot')
 
     Array.from(dots).forEach((dot) => {
-        dot.style.backgroundColor = ''
+        dot.style.backgroundColor = '';
+        dot.style.border = '';
     })
+    updateVictoryBanner({shouldShowPlayer1: false, shouldShowPlayer2: false});
 }
 
 const highlight = (items) => {
@@ -245,12 +252,11 @@ const checkConnection = (startLocation) => {
         endGame()
 
         if (checkerColor === PLAYER1) {
-            const victoryBannerP1 = document.getElementById('player-1-wins')
-            victoryBannerP1.hidden = false
+            updateVictoryBanner({shouldShowPlayer1: true, shouldShowPlayer2: false});
+
         }
         else {
-            const victoryBannerP2 = document.getElementById('player-2-wins')
-            victoryBannerP2.hidden = false
+            updateVictoryBanner({shouldShowPlayer1: false, shouldShowPlayer2: true});
         }
 
     }
