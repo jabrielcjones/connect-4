@@ -35,6 +35,8 @@ const clear = () => {
     Array.from(dots).forEach((dot) => {
         dot.style.backgroundColor = ''
     })
+
+    clearHighlight();
 }
 
 const highlight = (items) => {
@@ -336,10 +338,10 @@ const endGame = () => {
     gameBoard.removeEventListener('click', releaseChecker)
 }
 
-const resetGame = (e) => {
+const resetGame = () => {
     console.log('reset');
-    clear()
-    startGame()
+    clear();
+    startGame();
 }
 
 const startButton = document.getElementById('startButton')
