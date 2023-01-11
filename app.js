@@ -26,17 +26,16 @@ const clearHighlight = () => {
 
     Array.from(dots).forEach((dot) => {
         dot.style.border = ''
-    })
-}
+      })
+    }
+    
+    const clear = () => {
+      const dots = document.getElementsByClassName('dot')
 
-const clear = () => {
-    const dots = document.getElementsByClassName('dot')
-
-    Array.from(dots).forEach((dot) => {
+      Array.from(dots).forEach((dot) => {
         dot.style.backgroundColor = ''
+        dot.style.border = ''
     })
-
-    clearHighlight();
 }
 
 const highlight = (items) => {
